@@ -1,9 +1,13 @@
 import React from 'react'
 
-const LoginForm = ({onLogin}) => {
+const LoginForm = ({isLoggedIn, onLogin}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         onLogin();
+    }
+
+    if(isLoggedIn){
+      return <p>You are logged in!</p>
     }
   return (
     <form onSubmit={handleSubmit}>
